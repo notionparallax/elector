@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Eagle+Lake|Lovers+Quarrel|Princess+Sofia&display=swap');
+body{font-size: 16px;}
+h1, p {
+    margin: 0;
+}
+.card {
+    /* background-image: url("cardExample.png"); */
+    border: 2px solid black;
+    font-family: 'Eagle Lake', cursive;
+    height:28rem;
+    text-align: center;
+    margin-bottom:1em; 
+    width:100%;
+    page-break-inside: avoid;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: flex-start;
+}
+.card div {
+    height: 7rem;
+    padding: 1rem;
+    width: calc(100% - 2rem);
+}
+.event {
+    background-color: #dddddd;
+    padding-top:0; 
+}
+.diplomatic{
+    background-color: #b4c7dc;
+}
+.commercial{
+    background-color: #ffffd7;
+}
+.military{
+    background-color: #ffa6a6;
+}
+.event-title{text-decoration: underline;}
+h1.event-title {
+    font-size: 2rem;
+}
+.event-description{}
+.quote {
+    text-align: right;
+    font-size: 70%;
+    margin: 0;
+}
+.commercial-instructions{}
+.commercial-title{}
+.complete{}
+.date{}
+.diplomatic-instructions{}
+.diplomatic-title{}
+.full-list-of-potential-card-results{}
+.meta-analysis-opt-1{}
+.meta-analysis-opt-2{}
+.meta-analysis-opt-3{}
+.military-instructions{}
+.military-title{}
+.rng{}
+.icon {
+    background-size: contain;
+    content: " ";
+    height: 1em;
+    width: 1em;
+    display: inline-block;
+}
+.coin {
+    background-image: url(https://i1.wp.com/denarius.io/wp-content/uploads/2017/11/denarius-256.png?w=256&ssl=1);
+}
+.shield {
+    background-image: url(https://vignette.wikia.nocookie.net/shop-heroes/images/3/35/Shields_Heater_Shield.png/revision/latest?cb=20151209175138);
+}
+.book {
+    background-image: url(https://www.macupdate.com/images/icons256/40890.png);
+}
