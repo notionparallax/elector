@@ -9,19 +9,31 @@ function init() {
 }
 
 function hre_icon(text){
-    const book = "<span class='icon book'></span>";
-    const coin = "<span class='icon coin'></span>";
-    const shield = "<span class='icon shield'></span>";
-    return text
-            .replace(/📘/gi, book)
-            .replace(/📀/gi, coin)
-            .replace(/🛡/gi, shield);
+    try {
+        const book = "<span class='icon book'></span>";
+        const coin = "<span class='icon coin'></span>";
+        const shield = "<span class='icon shield'></span>";
+        const t = text
+                .replace(/📘/gi, book)
+                .replace(/📀/gi, coin)
+                .replace(/🛡/gi, shield);
+        return t;
+    } catch (e) {
+        console.error(e)
+        return text;
+    }
 }
 
 function showInfo(data, tabletop) {
     console.log(data);
     
     data.map(row=>{
+
+        for (var p in row) {
+            row[p] = row[p].trim();
+        }
+        console.log(row);
+
         const card = `
         <div class="card">
             <div class="event">
