@@ -1,4 +1,4 @@
-const publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1XMRpWyOiJQxa58_8Po-raj0lBCxBZXnhMtdMN12CEmY/';
+const publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1ZYMD-05RnCBb0zQRU1k0q2wqQik5Qltcs2VR87I-L8s/';
 
 function init() {
     Tabletop.init( { key: publicSpreadsheetUrl,
@@ -27,7 +27,7 @@ function showInfo(data, tabletop) {
             <div class="event">
                 <h1 class="c event-title">${row["Event Title"]}</h1>
                 <p class="a event-description">${row["Event Description"]}</p>
-                <p class="a quote">${row["Quote"]}</p>
+                <p class="a quote"><q>${row["Quote"]}</q>-<span class="attr">${row["attr"]}</span></p>
             </div><div class="diplomatic">
                 <p class="a diplomatic-title">${row["Diplomatic Title"]}</p>
                 <p class="a diplomatic-instructions">${hre_icon(row["Diplomatic Instructions📘 "])}</p>
