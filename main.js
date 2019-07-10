@@ -69,23 +69,20 @@ function showInfo(data, tabletop) {
 <g id="Mil">
     <foreignObject x="0" y="134.6">
         <div xmlns="http://www.w3.org/1999/xhtml" class="st9 st10 instruction">
-
             <p class="a military-title">${row["Military Title"]}</p>
             <p class="a military-instructions">${hre_icon(
               row["Military Instructions🛡"]
             )}</p>
-</div>
-</foreignObject>
+        </div>
+    </foreignObject>
 </g>
 <g id="Gold">
     <foreignObject x="0" y="89.7">
         <div xmlns="http://www.w3.org/1999/xhtml" class="st9 st10 instruction">
-        
-        <p class="a commercial-title">${row["Commercial Title"]}</p>
-        <p class="a commercial-instructions">${hre_icon(
-          row["Commercial Instructions📀"]
-        )}</p>
-        
+            <p class="a commercial-title">${row["Commercial Title"]}</p>
+            <p class="a commercial-instructions">${hre_icon(
+              row["Commercial Instructions📀"]
+            )}</p>
         </div>
     </foreignObject>
 </g>
