@@ -1,79 +1,120 @@
-@import url('https://fonts.googleapis.com/css?family=Eagle+Lake|Lovers+Quarrel|Princess+Sofia&display=swap');
-body{font-size: 16px;}
-h1, p {
-    margin: 0;
+@import url("https://fonts.googleapis.com/css?family=Eagle+Lake|Lovers+Quarrel|Princess+Sofia&display=swap");
+body {
+  font-size: 7px;
+  column-count: 2;
+}
+h1,
+p {
+  margin: 0;
+}
+foreignObject {
+  width: 100%;
+  height: 11.5mm;
+  /* outline: 1px solid green; */
+}
+foreignObject p {
+  margin-bottom: 0.5em;
 }
 .card {
-    /* background-image: url("cardExample.png"); */
-    border: 2px solid black;
-    font-family: 'Eagle Lake', cursive;
-    height:28rem;
-    text-align: center;
-    margin-bottom:1em; 
-    width:100%;
-    page-break-inside: avoid;
-
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-content: stretch;
-    align-items: flex-start;
+  /* background-image: url(cardExample.png); */
+  /* border: 2px solid black; */
+  font-family: "Eagle Lake", cursive;
+  height: 65.5mm;
+  text-align: center;
+  margin-bottom: 0.3mm;
+  width: 91mm;
+  page-break-inside: avoid;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: flex-start;
 }
-.card div {
-    height: 7rem;
-    padding: 1rem;
-    width: calc(100% - 2rem);
+.instruction {
+  margin: 5px;
+  line-height: 1;
 }
 .event {
-    background-color: #dddddd;
-    padding-top:0; 
+  background-color: #dddddd;
+  padding-top: 0;
 }
-.diplomatic{
-    background-color: #b4c7dc;
+.diplomatic {
+  background-color: #b4c7dc;
 }
-.commercial{
-    background-color: #ffffd7;
+.commercial {
+  background-color: #ffffd7;
 }
-.military{
-    background-color: #ffa6a6;
+.military {
+  background-color: #ffa6a6;
 }
-.event-title{text-decoration: underline;}
-h1.event-title {
-    font-size: 2rem;
+.title {
+  font-size: 15px;
 }
-.event-description{}
 .quote {
-    text-align: right;
-    font-size: 70%;
-    margin: 0;
+  font-size: 7px;
 }
-.commercial-instructions{}
-.commercial-title{}
-.complete{}
-.date{}
-.diplomatic-instructions{}
-.diplomatic-title{}
-.full-list-of-potential-card-results{}
-.meta-analysis-opt-1{}
-.meta-analysis-opt-2{}
-.meta-analysis-opt-3{}
-.military-instructions{}
-.military-title{}
-.rng{}
+.the-quote,
+.attr {
+  width: 45%;
+  display: inline-block;
+  vertical-align: middle;
+}
 .icon {
-    background-size: contain;
-    content: " ";
-    height: 1em;
-    width: 1em;
-    display: inline-block;
+  background-size: contain;
+  content: " ";
+  height: 1em;
+  width: 1em;
+  display: inline-block;
 }
 .coin {
-    background-image: url(https://i1.wp.com/denarius.io/wp-content/uploads/2017/11/denarius-256.png?w=256&ssl=1);
+  background-image: url(https://i1.wp.com/denarius.io/wp-content/uploads/2017/11/denarius-256.png?w=256&ssl=1);
 }
 .shield {
-    background-image: url(https://vignette.wikia.nocookie.net/shop-heroes/images/3/35/Shields_Heater_Shield.png/revision/latest?cb=20151209175138);
+  background-image: url(https://vignette.wikia.nocookie.net/shop-heroes/images/3/35/Shields_Heater_Shield.png/revision/latest?cb=20151209175138);
 }
 .book {
-    background-image: url(https://www.macupdate.com/images/icons256/40890.png);
+  background-image: url(https://www.macupdate.com/images/icons256/40890.png);
+}
+
+svg path.st0 {
+  display: none;
+}
+svg .st2 {
+  font-size: 12px;
+}
+svg path.st3 {
+  fill: #f4e9be;
+}
+svg path.st4 {
+  fill: #ed1d32;
+}
+svg rect.st5 {
+  fill: #f8e500;
+}
+svg rect.st6 {
+  fill: #3b53a4;
+}
+svg path.st7 {
+  fill: none;
+  stroke: #000000;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}
+svg text.ChampFleury {
+  font-family: "1529ChampFleuryW01-Regular";
+}
+svg text.DesMalersFraktur {
+  font-family: "DesMalersFraktur";
+}
+svg text.st13 {
+  font-size: 21px;
+}
+svg text.Deutschische {
+  font-family: "Deutschische";
+}
+svg rect.st15 {
+  fill: none;
+  stroke: #000000;
+  stroke-miterlimit: 10;
 }
