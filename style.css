@@ -60,6 +60,12 @@ foreignObject p {
   display: inline-block;
   vertical-align: middle;
 }
+.the-quote {
+  text-align: right;
+}
+.attr {
+  text-align: left;
+}
 .icon {
   background-size: contain;
   content: " ";
