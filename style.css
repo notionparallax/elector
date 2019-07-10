@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Eagle+Lake|Lovers+Quarrel|Princess+Sofia&display=swap");
 body {
   font-size: 7px;
-  column-count: 2;
+  /* column-count: 2; */
 }
 h1,
 p {
