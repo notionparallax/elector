@@ -11,30 +11,32 @@ function init() {
     .catch(err => console.error("Failed to load spreadsheet:", err));
 }
 
+function escapeHtml(str) {
+  const div = document.createElement("div");
+  div.textContent = str;
+  return div.innerHTML;
+}
+
 function hre_icon(text) {
   try {
     const book = "<span class='icon book'></span>";
     const coin = "<span class='icon coin'></span>";
     const shield = "<span class='icon shield'></span>";
-    const t = text
+    const t = escapeHtml(text)
       .replace(/📘/gi, book)
       .replace(/📀/gi, coin)
       .replace(/🛡/gi, shield);
     return t;
   } catch (e) {
-    console.error(e);
-    return text;
+    return escapeHtml(text);
   }
 }
 
-function showInfo(data, tabletop) {
-  console.log(data);
-
-  data.map(row => {
-    for (var p in row) {
+function showInfo(data) {
+  data.forEach(row => {
+    for (const p in row) {
       row[p] = row[p].trim();
     }
-    console.log(row);
 
     const card = `<?xml version="1.0" encoding="utf-8"?>
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -69,7 +71,7 @@ function showInfo(data, tabletop) {
 <g id="Mil">
     <foreignObject x="0" y="134.6">
         <div xmlns="http://www.w3.org/1999/xhtml" class="st9 st10 instruction">
-            <p class="a military-title">${row["Military Title"]}</p>
+            <p class="a military-title">${escapeHtml(row["Military Title"])}</p>
             <p class="a military-instructions">${hre_icon(
       row["Military Instructions🛡"]
     )}</p>
@@ -79,7 +81,7 @@ function showInfo(data, tabletop) {
 <g id="Gold">
     <foreignObject x="0" y="89.7">
         <div xmlns="http://www.w3.org/1999/xhtml" class="st9 st10 instruction">
-            <p class="a commercial-title">${row["Commercial Title"]}</p>
+            <p class="a commercial-title">${escapeHtml(row["Commercial Title"])}</p>
             <p class="a commercial-instructions">${hre_icon(
       row["Commercial Instructions📀"]
     )}</p>
@@ -90,7 +92,7 @@ function showInfo(data, tabletop) {
 	<foreignObject x="0" y="44.9">
         <div xmlns="http://www.w3.org/1999/xhtml" class="st9 st10 instruction">
     
-        <p class="a diplomatic-title">${row["Diplomatic Title"]}</p>
+        <p class="a diplomatic-title">${escapeHtml(row["Diplomatic Title"])}</p>
         <p class="a diplomatic-instructions">${hre_icon(
       row["Diplomatic Instructions📘 "]
     )}</p>    
@@ -102,9 +104,9 @@ function showInfo(data, tabletop) {
     <foreignObject x="0" y="26">
         <div xmlns="http://www.w3.org/1999/xhtml" class="st9 st10">
             <p class="quote">
-                <span class="the-quote">“${row["Quote"]}”</span>
+                <span class="the-quote">"${escapeHtml(row["Quote"])}"</span>
                 ~
-                <span class="attr">“${row["attr"]}”</span>
+                <span class="attr">"${escapeHtml(row["attr"])}"</span>
             </p>
         </div>
     </foreignObject>
@@ -113,8 +115,8 @@ function showInfo(data, tabletop) {
 <g id="Title_Text">
     <foreignObject x="0" y="5">
         <div xmlns="http://www.w3.org/1999/xhtml" class="title">
-            <p>“${row["Event Title"]}”</p>
-            <!--<p>${row["Event Description"]}</p> -->
+            <p>"${escapeHtml(row["Event Title"])}"</p>
+            <!--<p>${escapeHtml(row["Event Description"])}</p> -->
         </div>
     </foreignObject>
 </g>
