@@ -1,14 +1,14 @@
 const publicSpreadsheetUrl =
-  "https://docs.google.com/spreadsheets/d/1ZYMD-05RnCBb0zQRU1k0q2wqQik5Qltcs2VR87I-L8s/";
+  "https://docs.google.com/spreadsheets/d/1ZYMD-05RnCBb0zQRU1k0q2wqQik5Qltcs2VR87I-L8s/gviz/tq?tqx=out:csv";
 
 function init() {
-  Tabletop.init({
-    key: publicSpreadsheetUrl,
-    callback: showInfo,
-    simpleSheet: true,
-    debug: true,
-    prettyColumnNames: true
-  });
+  fetch(publicSpreadsheetUrl)
+    .then(response => response.text())
+    .then(csv => {
+      const parsed = Papa.parse(csv, { header: true, skipEmptyLines: true });
+      showInfo(parsed.data);
+    })
+    .catch(err => console.error("Failed to load spreadsheet:", err));
 }
 
 function hre_icon(text) {
@@ -71,8 +71,8 @@ function showInfo(data, tabletop) {
         <div xmlns="http://www.w3.org/1999/xhtml" class="st9 st10 instruction">
             <p class="a military-title">${row["Military Title"]}</p>
             <p class="a military-instructions">${hre_icon(
-              row["Military Instructions🛡"]
-            )}</p>
+      row["Military Instructions🛡"]
+    )}</p>
         </div>
     </foreignObject>
 </g>
@@ -81,8 +81,8 @@ function showInfo(data, tabletop) {
         <div xmlns="http://www.w3.org/1999/xhtml" class="st9 st10 instruction">
             <p class="a commercial-title">${row["Commercial Title"]}</p>
             <p class="a commercial-instructions">${hre_icon(
-              row["Commercial Instructions📀"]
-            )}</p>
+      row["Commercial Instructions📀"]
+    )}</p>
         </div>
     </foreignObject>
 </g>
@@ -92,8 +92,8 @@ function showInfo(data, tabletop) {
     
         <p class="a diplomatic-title">${row["Diplomatic Title"]}</p>
         <p class="a diplomatic-instructions">${hre_icon(
-          row["Diplomatic Instructions📘 "]
-        )}</p>    
+      row["Diplomatic Instructions📘 "]
+    )}</p>    
     
         </div>
     </foreignObject>
